@@ -18,29 +18,36 @@ namespace drugstore.Repository
             _context = context;
         }
 
-        public Task<ActionResult<Administrator>> Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<ActionResult<List<Administrator>>> Get()
         {
             return await _context.Administrators.AsNoTracking().ToListAsync();
         }
 
-        public Task<ActionResult<Administrator>> Get(int id)
+        public async Task<ActionResult<Administrator>> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Administrators.FindAsync(id);
         }
 
-        public Task<ActionResult<List<Administrator>>> Post(Administrator model)
+        public void Insert(Administrator model)
         {
-            throw new NotImplementedException();
+             _context.Administrators.Add(model);
         }
 
-        public Task<ActionResult<List<Administrator>>> Put(int id)
+        public void Update(Administrator model)
         {
-            throw new NotImplementedException();
+            _context.Entry(model).State = EntityState.Modified;
+        }
+
+        public void Save()
+        {
+           _context.SaveChangesAsync();
+        }
+
+        public void Delete(int id)
+        {
+            var admin = _context.Administrators.Find(id);
+            _context.Administrators.Remove(admin);
         }
     }
 }

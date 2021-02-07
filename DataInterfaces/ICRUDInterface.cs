@@ -11,9 +11,10 @@ namespace drugstore.DataInterfaces
     {
         Task<ActionResult<List<T>>> Get();
         Task<ActionResult<T>>Get(int id);
-        Task<ActionResult<List<T>>>Post(T model);
-        Task<ActionResult<List<T>>>Put(int id);
-        Task<ActionResult<T>> Delete(int id);
+        void Insert(T model);
+        void Update(T model);
+        void Delete(int id);
+        void Save();
         
     }
 }
