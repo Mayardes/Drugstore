@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace drugstore.Repository
 {
-    public class AdministratorRepository : ICRUDInterface<Administrator>
+    public class AdministratorRepository : IAdministratorInterface
     {
-        private readonly DataContext _context;
-        public AdministratorRepository(DataContext context)
+        private readonly AppDataContext _context;
+        public AdministratorRepository(AppDataContext context)
         {
             _context = context;
         }
@@ -21,7 +21,7 @@ namespace drugstore.Repository
 
         public async Task<ActionResult<List<Administrator>>> Get()
         {
-            return await _context.Administrators.AsNoTracking().ToListAsync();
+            return await _context.Administrators.ToListAsync();
         }
 
         public async Task<ActionResult<Administrator>> Get(int id)
@@ -36,12 +36,12 @@ namespace drugstore.Repository
 
         public void Update(Administrator model)
         {
-            _context.Entry(model).State = EntityState.Modified;
+            _context.Entry<Administrator>(model).State = EntityState.Modified;
         }
 
         public void Save()
         {
-           _context.SaveChangesAsync();
+           _context.SaveChanges();
         }
 
         public void Delete(int id)

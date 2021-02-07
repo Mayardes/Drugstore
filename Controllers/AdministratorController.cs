@@ -12,8 +12,8 @@ namespace drugstore.Controllers
     [Route("v1/admin")]
     public class AdministratorController : ControllerBase
     {
-        private readonly ICRUDInterface<Administrator> _administratorRepository;
-        public AdministratorController(ICRUDInterface<Administrator> administratorInterface)
+        private readonly IAdministratorInterface _administratorRepository;
+        public AdministratorController(IAdministratorInterface administratorInterface)
         {
             _administratorRepository = administratorInterface;
         }
@@ -97,6 +97,7 @@ namespace drugstore.Controllers
         public async Task<ActionResult<Administrator>>Delete(int id)
         {
             _administratorRepository.Delete(id);
+            _administratorRepository.Save();
             return Ok();
         }
 

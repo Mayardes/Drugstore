@@ -2,7 +2,7 @@
 
 namespace drugstore.Migrations
 {
-    public partial class update : Migration
+    public partial class updatedatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

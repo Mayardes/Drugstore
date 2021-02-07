@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace drugstore.DataInterfaces
 {
-    public interface ICRUDInterface <T>
+    public interface IAdministratorInterface
     {
-        Task<ActionResult<List<T>>> Get();
-        Task<ActionResult<T>>Get(int id);
-        void Insert(T model);
-        void Update(T model);
+        Task<ActionResult<List<Administrator>>> Get();
+        Task<ActionResult<Administrator>>Get(int id);
+        void Insert(Administrator model);
+        void Update(Administrator model);
         void Delete(int id);
         void Save();
         
