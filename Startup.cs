@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using drugstore.Data;
@@ -34,7 +35,13 @@ namespace drugstore
         {
             
             services.AddControllers()
-                .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Administrator>());
+                .AddFluentValidation(x => 
+                {
+                    x.RegisterValidatorsFromAssemblyContaining<Administrator>();
+                    x.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
+                });
+                                     
+                                      
 
             services.AddDbContext<AppDataContext>( x => x.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             
