@@ -59,3 +59,6 @@ C:\Projetos\Pessoais\Drugstore\obj\Debug\net5.0\drugstore.pdb
 C:\Projetos\Pessoais\Drugstore\obj\Debug\net5.0\drugstore.genruntimeconfig.cache
 C:\Projetos\Pessoais\Drugstore\bin\Debug\net5.0\Humanizer.dll
 C:\Projetos\Pessoais\Drugstore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projetos\Pessoais\Drugstore\bin\Debug\net5.0\FluentValidation.dll
+C:\Projetos\Pessoais\Drugstore\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Projetos\Pessoais\Drugstore\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
